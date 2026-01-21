@@ -1,4 +1,8 @@
 # PHP Nette CMS Project
+<p align="center">
+  <img src="cms_logo.png" width="1200" alt="Cms Icon">
+</p>
+
 ## About the Project
 
 This website serves as a simple demo content management system (CMS) built using the Nette framework.
