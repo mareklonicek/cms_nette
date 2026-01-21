@@ -1,5 +1,5 @@
 # PHP Nette CMS Project
----
+
 ## About the Project
 
 This website serves as a simple demo content management system (CMS) built using the Nette framework.
