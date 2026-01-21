@@ -1,0 +1,61 @@
+{block content}
+
+    <h1 n:block=title>Správa článků</h1>
+
+	<h5 class="info">Vítejte v administraci! Jste přihlášen/a jako: <span class="emphasize">{$username}.</span> Máte oprávnění na úrovni: <span class="emphasize">{$role}</span>.</h5>
+
+
+<section class="articleList">
+
+	<table class="adminArticles">
+		<thead>
+			<tr>
+				<th  n:if="$user->isInRole('admin')">Autor</th>
+				<th>Datum</th>
+				<th>Název</th>
+				<th>Náhled</th>
+			</tr>
+		</thead>
+
+<!-- články pro uživatele admim-->
+		<tbody n:if="$user->isInRole('admin')">
+		<div n:foreach="$allArticles as $article">
+			<tr class="articleRow">
+				<td>{$article[author]}</td>
+				<td><h5 class="date">{$article[post]->created_at|date:'j. n. Y'}</h5></td>
+				<td><a n:href="Post:show $article[post]->article_id">{$article[post]->title}</a></td>
+				<td>{$article[post]->content|truncate:150|noescape}</td>
+			
+				<td class="adminEdit">
+					<span class="adminEditLink"><a n:href="Post:edit $article[post]->article_id">Editovat</a></span>
+					<span class="adminEditLink"><a n:href="Post:remove $article[post]->article_id">Odstranit</a></span>
+				</td>
+			</tr>
+			</div>
+		</tbody>
+
+<!-- články pro uživatele role redaktor-->
+		<tbody n:if="$user->isInRole('redaktor')">
+
+		{if is_array($myArticles)}
+		<div n:foreach="$myArticles as $article">
+			<tr class="articleRow">
+				<td><h5 class="date">{$article->created_at|date:'j. n. Y'}</h5></td>
+				<td><a n:href="Post:show $article->article_id">{$article->title}</a></td>
+				<td>{$article->content|truncate:150|noescape}</td>
+				
+				<td class="adminEdit">
+					<span class="adminEditLink"><a n:href="Post:edit $article->article_id">Editovat</a></span>
+					<span class="adminEditLink"><a n:href="Post:remove $article->article_id">Odstranit</a></span>
+				</td>
+			</tr>
+		</div>
+		{/if}
+		</tbody>
+
+	</table>
+
+</section>
+
+
+{/block}

@@ -1,0 +1,28 @@
+{block content}
+
+
+      <h1 n:block="title">O projektu</h1>
+
+      <h5 class="info">Stránka slouží jako ukázkový jednoduchý redakční systém, který využívá framework <a href="https://nette.org/cs/" target=_blank>Nette</a>.</h5>
+
+
+  <h4 class="emphasize info">Aplikace má následující funkcionality:</h4>
+   
+    <article class="about">
+    <ul class="nobulletList">    
+      <li>Na úvodní stránce se vypisují všechny články
+      - lze je řadit dle data (od nejnovějšího/od nejstaršího.)</li>
+      
+      <li>Přihlášení do správy článků je možné pro dva typy uživatelských rolí:
+      <ul>
+        <li>admin - má všechna oprávnění (tj. přidat, upravit, smazat jakýkoli článek).</li>
+        <li>redaktor - může vkládat nové články a spravovat (mazat, upravovat) své články.</li>
+      </ul>
+      </li>
+
+      <li>Při vložení nového článku redaktorem, je uživateli/uživatelům, v roli "admin" odeslána notifikace na email.</li>
+      
+      </ul>
+        </article>
+
+{/block}

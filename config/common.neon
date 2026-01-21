@@ -1,0 +1,49 @@
+parameters:
+		websiteUrl: 'your website' # URL webu - volitelný parametr
+		sendFrom: 'your email address' # Odesílací email - nastavit dle skutečných hodnot
+
+		articles: #parametry pro model Post
+			table_name: 'articles'
+			created_at: 'created_at'
+			column_id: 'article_id'
+			author_id: 'author_id'
+
+		posts_limit: 3 #počet článku zobrazených na stránku na homepage
+
+application:
+	errorPresenter: Error
+	mapping:
+		*: App\*Module\Presenters\*Presenter
+
+
+session:
+	expiration: 14 days
+
+
+di:
+	export:
+		parameters: no
+		tags: no
+
+#nastavení databázového přístupu
+database:
+	dsn: 'mysql:host=localhost;dbname=userposts' #nastavit dle skutečných parametrů
+	user: 'root'
+	password: ''
+
+# nastavení odesílání mailů
+mail:
+	smtp: true  # use SmtpMailer instead of SendmailMailer
+	host: 'smtp.seznam.cz'
+	port: 465 #use correct port
+	username: 'mark.lonicek@seznam.cz'
+	password: '...'
+	secure: ssl # possible values are ssl, tls or null
+
+
+#role v aplikaci
+security:
+	roles:
+		guest:
+		redaktor: [guest]
+		admin:

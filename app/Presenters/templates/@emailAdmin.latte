@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Nový článek: {$title}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,600;0,800;1,400;1,600;1,800&display=swap" rel="stylesheet">
+
+        <style>
+        body {
+            background-color: #F4F4F4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Red Hat Display', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: #FFBA56;
+            border-radius: 1rem;
+            margin: 1rem 0.5rem 0.5rem;
+            padding: 1rem;
+            width: 50%;
+        }
+
+        .content {
+            background-color: #ffffff;
+            border-radius: 1rem;
+            padding: 0.5rem;
+        }
+
+        footer {
+            background-color: #ffffff;
+            text-align: center;
+            width: 50%;
+        }
+        </style>
+
+</head>
+<body>
+<div class="container">
+    <header>
+        <p>Dobrý den,</p>
+        <p>na webu byl právě vložen nový článek s názvem <strong>{$title}</strong>.</p>
+    </header>
+    <main>
+        <h5>Obsah článku:</h5>
+        <div class="content">{$content|noescape}</div>
+    </main>
+</div>
+<footer>
+    <h5>Toto je automaticky generovaná zpráva. Prosíme neodpovídejte na ni.</h5>
+</footer>
+</body>
+</html>

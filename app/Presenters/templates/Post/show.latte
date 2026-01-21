@@ -1,0 +1,26 @@
+{block content}
+
+<div class="showwrapper">
+
+<p><a n:href="Homepage:default">← zpět na výpis příspěvků</a></p>
+
+<article class="article">
+<h4 class="date">{$post->created_at|date:'j. n. Y'}</h4>
+
+<h1 n:block="title" class="title">{$post->title}</h1>
+
+<div class="article-content">{$post->content|noescape}</div>
+</article>
+
+{if ($user->getId()=== $post->author_id) OR ($user->isInRole('admin')) }
+        <nav>
+        <ul class="editLinks">
+                <li><img src="{$basePath}/img/icons/edit.png" ALT="icon edit"><a n:href="Post:edit $post->article_id">Editovat</a></li>
+               <li><img src="{$basePath}/img/icons/delete.png" ALT="icon delete"><a n:href="Post:remove $post->article_id">Odstranit</a></li>
+        </ul>
+        </nav>
+{/if}
+</div>
+
+{/block}
+

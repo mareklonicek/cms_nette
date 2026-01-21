@@ -1,0 +1,18 @@
+parameters:
+    websiteUrl: 'localhost' # URL webu
+    sendFrom: 'YOUR EMAIL' # Odesílací email	# set your own email address
+
+database:
+	dsn: 'mysql:host=127.0.0.1;dbname=userposts' #update according to your localhost
+	user: 'root'
+	password: ''
+
+tracy:
+	bar:
+		- Nextras\MailPanel\MailPanel(%tempDir%/mail-panel-latte)
+
+#nette mailer k testování odesílání mailů
+services:
+	nette.mailer:
+		class: Nette\Mail\Mailer
+		factory: Nextras\MailPanel\FileMailer(%tempDir%/mail-panel-mails)

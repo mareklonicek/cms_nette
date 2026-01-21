@@ -1,0 +1,22 @@
+	{block nav}
+
+			<div class="toggle">
+				<a id="toggle-icon">
+					<img src="{$basePath}/img/icons/menu.png" alt="toggle menu icon">
+				</a>
+			</div>
+			
+		<div class="menu-items">
+			<span class="nav-item"><a n:href="Homepage:default">Domovská stránka</a></span>
+			
+			{if $user->isLoggedIn()}
+				<span class="nav-item"><a n:href="Administration:default">Správa článků</a></span>
+				<span class="nav-item"><a n:href="Post:create">Nový článek</a></span>
+				<span class="nav-item"><a n:href="Sign:out">Odhlásit</a></span>
+			{else}
+				<span class="nav-item"><a n:href="Sign:in">Přihlásit</a></span>
+			{/if}
+				<span class="nav-item"><a n:href="Homepage:about">O projektu</a></span>
+		</div>
+
+    {/block}

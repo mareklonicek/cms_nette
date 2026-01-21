@@ -1,0 +1,50 @@
+{block content}
+
+
+
+<h1 n:block="title">Všechny články</h1>
+
+<nav>
+	<ul class="order">
+		<li><h5>řadit podle data:</h5></li>
+
+		<li><img src="{$basePath}/img/icons/oldest.png" ALT="icon descending list"><a n:href="Homepage:default, $page, sort: 'ASC'">od nejstarších</a></li>
+
+		<li><img src="{$basePath}/img/icons/newest.png" ALT="icon ascending list"><a n:href="Homepage:default, $page, sort: 'DESC'">od nejnovějších</a></li>
+	</ul>
+</nav>
+
+
+<section class="articleList">
+	<article n:foreach="$posts as $post" class="article">
+
+		<h5 class="date">{$post->created_at|date:'j. n. Y'}</h5>
+
+		<!-- <div><h2><a n:href="Post:show $post->article_id">{$post->title}</a></h2></div> -->
+
+		<div class="article-content">{$post->content|truncate:256|noescape}</div>
+
+	</article>
+</section>
+
+
+<nav class="pagination">
+	{if $page > 1}
+		<a n:href="default, 1, $sort">první</a>
+		<img src="{$basePath}/img/icons/first.png" ALT="icon first item">
+
+		<a n:href="default, $page - 1,$sort">předchozí</a>
+		<img src="{$basePath}/img/icons/previous.png" ALT="icon previous item">
+	{/if}
+
+	<h5>stránka {$page} z {$lastPage}</h5>
+
+	{if $page < $lastPage}
+		<img src="{$basePath}/img/icons/next.png" ALT="icon next item">
+		<a n:href="default, $page + 1,$sort">další</a>
+		<img src="{$basePath}/img/icons/last.png" ALT="icon last item">
+		<a n:href="default, $lastPage,$sort">poslední</a>
+	{/if}
+</nav>
+
+{/block}

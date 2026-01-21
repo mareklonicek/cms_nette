@@ -1,0 +1,402 @@
+/*** default browser style reset***/
+/* set default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure,
+blockquote,
+ul,
+dl,
+dd,
+td,
+tr,
+th {
+    margin: 0;
+}
+
+p {
+    margin: 1rem 0;
+}
+
+/*** general app css ***/
+body {
+    background-color: #ffffff;
+    box-sizing: border-box;
+    border: 0;
+    font-family: 'Red Hat Display', sans-serif;
+    padding: 0;
+}
+
+
+/** links **/
+a {
+    color: #FF9905;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #08549E;
+}
+
+
+/*** form styling ***/
+label {
+    font-weight: 600;
+}
+
+input {
+    background: #FEFEFE;
+    border-radius: 0.3rem;
+    border: solid 1px #CCCCCC;
+    font: inherit;
+    margin: 0.2rem 0.5rem;
+    padding: 0.2rem;
+    resize: none;
+}
+
+input:focus {
+    background: #F9FDFF;
+    border: solid 1px #7BB2E8;
+    outline: none;
+}
+
+.button {
+    border: 1px solid #FEFEFE;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #FFBA56;
+    color: #08549E;
+    font-size: 0.9rem;
+    margin: 0 0.1rem 0 0;
+    padding: 0.5rem;
+}
+
+.button:hover {
+    background-color: #FF9905;
+    border: 1px solid #FFBA56;
+    border-radius: 0.3rem;
+    color: #f2f2f2;;
+}
+
+textarea {
+  background: #FEFEFE;
+  border-radius: 5px;
+  border: solid 1px #CCCCCC;
+  font: inherit;
+  white-space: pre-line;
+  height: 20vh;
+  width: 50vw;
+}
+
+textarea:focus {
+    background: #F9FDFF;
+    border: solid 1px #7BB2E8;
+    outline: none;
+}
+
+
+/*** css for elements of the web ***/
+
+/** page header **/
+.logo_bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-evenly;
+}
+
+.pagetitle {
+    font-size: 2rem;
+    color:#3484D2;
+}
+
+
+/** navigation **/
+.navbar {
+    background-color:  #FFBA56;
+    border-radius: 0.3rem;
+ 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* icon for mobile navigation */
+.toggle {
+    display: none;
+}
+
+/* container for navigation links */
+.menu-items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+
+/* navigation links */
+.nav-item a {
+    color: #08549E;
+    display: inline-block;
+    padding: 0.8rem 0.5rem;
+    text-align:center; 
+}
+
+.nav-item a:hover {
+    background-color: #FF9905;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    color: #f2f2f2;
+    transition: 0.2s;
+}
+
+
+/** content wrapper **/
+.container {
+    background-color: #FEFEFE;
+    margin: 0 auto;
+    padding: 0.5rem 0 1rem;
+    width: 80vw;
+}
+
+/** main section **/
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2.5rem;
+    min-height: 60vh;
+}
+
+.emphasize {
+    color:#3484D2;
+}
+
+/** footer **/
+.footer-copyright {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 0.8rem;
+    margin: 1rem 0;
+}
+
+
+/*** css for templates ***/
+
+/** homepage template **/
+.articleList {
+    margin: 2rem 0;
+}
+
+.article {
+    margin: 1rem 0 1.5rem;
+    padding: 0.5rem;
+}
+
+.article-content {
+    margin:0.3rem 0 0;
+}
+
+.order, .pagination, .editLinks {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1rem;
+    list-style: none;
+    margin: 1rem 0;
+    padding: 0 0.5rem;
+}
+
+.pagination {
+    justify-content: center;
+    padding: 0;
+}
+
+/** about **/
+.about {
+    line-height:1.8;
+    padding: 1rem;
+}
+
+.nobulletList {
+    list-style:none;
+}
+
+
+/** sign in **/
+.signInwrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 60vw;
+}
+
+.info {
+    margin: 1rem 0;
+}
+
+.form {
+    margin: 1rem 0;
+    padding: 1rem 0;
+}
+
+.form th {
+    text-align:right;
+}
+
+
+/** post - show **/
+.showwrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 3rem 0;
+    padding: 3rem;
+    width: 70vw;
+}
+
+.title {
+    margin: 1rem 0;
+}
+
+
+/** post - create
+* input for adding aricle title (textarea is handled by TinyMCE)**/
+input#frm-postForm-title {
+    margin: 0.2rem 0 0.5rem;
+    padding: 0.2rem;
+    width: 40vw;
+}
+
+
+/** post - edit **/
+.editwrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60vw;
+}
+
+.editLinks img {
+    margin: 0 0.1rem;
+    vertical-align: middle;
+}
+
+
+/** administration **/
+.adminArticles {
+    margin: 1rem 0;
+    padding: 1rem;
+    width: 75vw;
+}
+
+.adminArticles th {
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.adminArticles td {
+    text-align: center;
+    padding: 1rem 0;
+    vertical-align: text-top;
+}
+
+.articleRow {
+    margin: 0 0 1rem 0;
+}
+
+.adminEdit {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.adminEditLink a {
+    background-color: #FFBA56;
+    border-radius:1rem;
+    color: #08549E;
+    padding: 0.2rem 0.5rem;
+}
+
+.adminEditLink a:hover {
+    background-color: #FF9905;
+    cursor: pointer;
+    color: #f2f2f2;
+}
+
+
+/** flash messages **/
+.flash {
+    border: solid 1px #f2f2f2;
+    border-radius: 1rem;
+    margin: 2rem 1rem 0.3rem;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.success {
+    color:#3484D2;
+    font-weight: 700;
+}
+
+.error {
+    color:#380DA7;
+    font-weight: 700;
+}
+
+
+
+/*** mobile ***/
+@media screen and (max-width: 480px) {
+
+    .pagetitle {
+        font-size: 1rem;
+    }
+
+
+    /** navigation - toggle menu **/
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* toggle icon */
+    .toggle {
+        display: block;
+        color: white;
+        cursor: pointer;
+    }
+
+    /* nav links for desktop*/
+    .menu-items {
+        display: none;
+    }
+
+    /* nav links in toggle menu*/
+    .menu-items.responsive {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-item a { 
+        width:90vw;
+    }
+
+}

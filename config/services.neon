@@ -1,0 +1,32 @@
+services:
+	- App\Router\RouterFactory::createRouter 
+	- Latte\Engine
+	
+	- App\Model\Post(%articles%) 
+	- App\Model\User
+	- App\Model\Mail(%sendFrom%)
+	- App\Presenters\HomepagePresenter(%posts_limit%)
+
+
+# Nastavení služby pro oprávnění uživatelů v rámci CoreModule (ACL).
+	security.authorizator:
+		setup:
+		# Zdroje 
+			- addResource(Administration)
+			- addResource(Homepage)
+			- addResource(Post)
+			- addResource(Sign)
+			- addResource(Error)
+		# Pravidla přístupu
+			- allow(guest, Homepage)
+			- allow(guest, Sign)
+			- allow(guest, Post, show)
+			- allow(guest, Error)
+			- allow(redaktor, Administration)
+			- allow(redaktor, Post)
+			- allow(admin)
+
+# Nastavení výchozích chybových hlášek pro formuláře.
+forms:
+	messages:
+		REQUIRED: 'Toto pole je povinné.'
