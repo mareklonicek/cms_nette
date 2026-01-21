@@ -17,7 +17,7 @@ When a new article is added by an editor, a notification email is sent to the us
 
 ## 📂 Project Folders & Files Tree Structure (vendor, temp folders ignored)
 
-ˇˇˇ
+```
 ├── 📄 .htaccess
 ├── 📄 README.md
 ├── 📁 app
@@ -92,4 +92,4 @@ When a new article is added by an editor, a notification email is sent to the us
             ├── 📄 script.js
       └── 📄 robots.txt
 
-ˇˇˇ
+```
